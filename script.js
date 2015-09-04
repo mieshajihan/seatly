@@ -1,1 +1,1 @@
-alert('Welcome to Seatly!');
+// alert('Welcome to Seatly!');
