@@ -1,33 +1,24 @@
-function toggleForm(id) {
-   var e = document.getElementById("reservationForm");
-   if(e.style.display == 'block') {
-      e.style.display = 'none';
-   }
-   else {
-      e.style.display = 'block';
-   }
+var customers = [];
+
+var reservationForm = document.getElementById('reservationForm');
+var seat = document.getElementsByClassName('seat');
+
+var seatList = [].slice.call(seat); // turn seats into an array
+
+function toggleAvail(seats) {
+	seats.forEach(function(seat) {
+		seat.addEventListener('click', function() {
+			seat.innerHTML = seat.innerHTML.replace('Reserve', 'Sold Out');
+		});
+	});
 }
 
-// var reservationForm = document.getElementById('reservationForm');
+toggleAvail(seatList);
 
-// document.querySelector(".seat").addEventListener('click', reserveSeat);
-
-// function reserveSeat() {
-// 	document.querySelector(".seat").addEventListener("click", function(){
-// 	    document.querySelector("#reservationForm").style.display = "block";
-// 	});	
-// }
-
-// reserveSeat();
-
-// var seat = document.getElementsByClassName('seat');
-
-// function showForm(seats) {
-// 	seats.forEach(function(){
-// 		document.querySelector(".seat").addEventListener("click", function(){
-// 	    	document.querySelector("#reservationForm").style.display = "block";
-// 		});	
-// 	});
-// }
-
-// showForm();
+function toggleForm(id) {
+   var e = document.getElementById(id);
+   if(e.style.display == 'block')
+      e.style.display = 'none';
+   else
+      e.style.display = 'block';
+}
