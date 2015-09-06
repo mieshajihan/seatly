@@ -1,5 +1,5 @@
 body {
-	background-image: url(bg.png);
+	background-image: url(bg.png); 
 }
 
 #main {
@@ -9,8 +9,9 @@ body {
 }
 
 #reservationForm {
-	display:none;
+	display: none;
 	margin-bottom: 20px;
+	padding: 0 10px;
 }
 
 .description {
