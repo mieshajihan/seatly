@@ -10,23 +10,23 @@ var seatsContainer = document.getElementById('seats');
 var seatBtn = document.getElementsByClassName('seat');
 var form    = document.getElementById('reservationForm');
 var activeSeat = document.getElementById('activeSeat');
+var submit = document.getElementById('submit');
 
 // Event handlers
-$('.seat').on('click', showForm);
-$('#submit').on('click', submitForm);
+// $('.seat').on('click', showForm);
+for(i=0; i<seatBtn.length; i++){
+	seatBtn[i].addEventListener('click', showForm);
+}
+submit.addEventListener('click', submitForm);
 
+// Functions
 function showForm() {
   form.style.display = 'block';
 
   $('.seat').addClass('btn-inactive');
   $(this).removeClass('btn-inactive');
   $(this).addClass('btn-primary active');
-
-  // for(i = 0; i <= numOfSeats; i++) {
-  // 	activeSeat.innerHTML = seats[i].seat;
-  // }
 };
-
 
 function submitForm(e) {
 	e.preventDefault();
@@ -36,4 +36,7 @@ function submitForm(e) {
 	form.style.display = 'none';
 
 	$('.active').html('Reserved');
+
+	form.reset();
 };
+
