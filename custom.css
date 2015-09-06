@@ -8,21 +8,29 @@ body {
 	box-shadow: 1px 1px 1px 2px rgba(0,0,0,.05);
 }
 
+.ticket {
+	margin-top: 30px;
+}
+
+.description {
+	padding: 10px 0;
+}
+
+.row {
+	margin-bottom: 1em;
+}
+
+.seat {
+	padding: 5% 12%;
+}
+
 #reservationForm {
 	display: none;
 	margin-bottom: 20px;
 	padding: 0 10px;
 }
 
-.description {
-	padding: 20px;
-}
-
 .btn-inactive {
   pointer-events: none;
   opacity: 0.25;
-}
-
-.row {
-	margin-bottom: 1em
 }
