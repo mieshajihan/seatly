@@ -4,9 +4,10 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="custom.css">
 	<title>seat reservation app</title>
+  <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
 </head>
 <body>
-    <nav class="navbar navbar-default">
+    <nav class="navbar navbar-default navbar-static-top">
       <div class="container-fluid">
         <div class="navbar-header">
           <a class="navbar-brand" href="#">Seatly</a>
@@ -14,143 +15,162 @@
       </div>
     </nav>
 
-   	<div class="container" id="seats">
-   		<div class="row">
-   			<div class="col-xs-3">
-          <button class="btn btn-default seat" onclick="toggleForm('reservationForm');">
-          Reserve
-          </button>  
-        </div>
-   			<div class="col-xs-3">
-          <button class="btn btn-default seat" onclick="toggleForm('reservationForm');">
-          Reserve
-          </button>  
-        </div>
-   			<div class="col-xs-3">
-          <button class="btn btn-default seat" onclick="toggleForm('reservationForm');">
-          Reserve
-          </button>  
-        </div>
-   			<div class="col-xs-3">
-          <button class="btn btn-default seat" onclick="toggleForm('reservationForm');">
-          Reserve
-          </button>  
-        </div>
-   		</div>
-   		<div class="row">
-   			<div class="col-xs-3">
-          <button class="btn btn-default seat" onclick="toggleForm('reservationForm');">
-          Reserve
-          </button>  
-        </div>
-   			<div class="col-xs-3">
-          <button class="btn btn-default seat" onclick="toggleForm('reservationForm');">
-          Reserve
-          </button>  
-        </div>
-   			<div class="col-xs-3">
-          <button class="btn btn-default seat" onclick="toggleForm('reservationForm');">
-          Reserve
-          </button>  
-        </div>
-   			<div class="col-xs-3">
-          <button class="btn btn-default seat" onclick="toggleForm('reservationForm');">
-          Reserve
-          </button>  
-        </div>
-   		</div>
-    	<div class="row">
-   			<div class="col-xs-3">
-          <button class="btn btn-default seat" onclick="toggleForm('reservationForm');">
-          Reserve
-          </button>  
-        </div>
-   			<div class="col-xs-3">
-          <button class="btn btn-default seat" onclick="toggleForm('reservationForm');">
-          Reserve
-          </button>  
-        </div>
-   			<div class="col-xs-3">
-          <button class="btn btn-default seat" onclick="toggleForm('reservationForm');">Reserve</button>  
-        </div>
-   			<div class="col-xs-3">
-          <button class="btn btn-default seat" onclick="toggleForm('reservationForm');">Reserve</button>  
-        </div>
-   		</div> 	
-   		<div class="row">
-        <div class="col-xs-3">
-          <button class="btn btn-default seat" onclick="toggleForm('reservationForm');">Reserve</button>  
-        </div>
-        <div class="col-xs-3">
-          <button class="btn btn-default seat" onclick="toggleForm('reservationForm');">Reserve</button>  
-        </div>
-        <div class="col-xs-3">
-          <button class="btn btn-default seat" onclick="toggleForm('reservationForm');">Reserve</button>  
-        </div>
-        <div class="col-xs-3">
-          <button class="btn btn-default seat" onclick="toggleForm('reservationForm');">
-          Reserve
-          </button>  
-        </div>
-      </div>  
-      <div class="row">
-        <div class="col-xs-3">
-          <button class="btn btn-default seat" onclick="toggleForm('reservationForm');">
-          Reserve
-          </button>  
-        </div>
-        <div class="col-xs-3">
-          <button class="btn btn-default seat" onclick="toggleForm('reservationForm');">
-          Reserve
-          </button>  
-        </div>
-        <div class="col-xs-3">
-          <button class="btn btn-default seat" onclick="toggleForm('reservationForm');">
-          Reserve
-          </button>  
-        </div>
-        <div class="col-xs-3">
-          <button class="btn btn-default seat" onclick="toggleForm('reservationForm');">
-          Reserve
-          </button>  
-        </div>
-      </div>  
-      <div class="row">
-   			<div class="col-xs-3">
-          <button class="btn btn-default seat" onclick="toggleForm('reservationForm');">
-          Reserve
-          </button>  
-        </div>
-   			<div class="col-xs-3">
-          <button class="btn btn-default seat" onclick="toggleForm('reservationForm');">
-          Reserve
-          </button>  
-        </div>
-   			<div class="col-xs-3">
-          <button class="btn btn-default seat" onclick="toggleForm('reservationForm');">
-          Reserve
-          </button>  
-        </div>
-   			<div class="col-xs-3">
-          <button class="btn btn-default seat" onclick="toggleForm('reservationForm');">
-          Reserve
-          </button>  
-        </div>
-   		</div>
+   	<div class="container" id="main">
 
-    <hr>
+      <div class="row">
+        <div class="col-xs-12">
+          <p class="text-center description">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+        </div>
+      </div>
 
-  	<form id="reservationForm">
-  	  <div class="form-group">
-  	    <label for="exampleInputEmail1">Email address</label>
-  	    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
-  	  </div>
-  	  <div class="form-group">
-  	    <label for="name">Name</label>
-  	    <input type="text" class="form-control" id="name" placeholder="Your Name">
-  	  </div>
-  	  <input type="submit" id="submit" class="btn btn-default"></button>
-  	</form>
+      <div class="seats">
+     		<div class="row">
+     			<div class="col-xs-3 text-center">
+            <button class="btn btn-default seat">
+            Reserve
+            </button>  
+          </div>
+     			<div class="col-xs-3 text-center">
+            <button class="btn btn-default seat">
+            Reserve
+            </button>  
+          </div>
+     			<div class="col-xs-3 text-center">
+            <button class="btn btn-default seat">
+            Reserve
+            </button>  
+          </div>
+     			<div class="col-xs-3 text-center">
+            <button class="btn btn-default seat">
+            Reserve
+            </button>  
+          </div>
+     		</div>
+     		<div class="row">
+     			<div class="col-xs-3 text-center">
+            <button class="btn btn-default seat">
+            Reserve
+            </button>  
+          </div>
+     			<div class="col-xs-3 text-center">
+            <button class="btn btn-default seat">
+            Reserve
+            </button>  
+          </div>
+     			<div class="col-xs-3 text-center">
+            <button class="btn btn-default seat">
+            Reserve
+            </button>  
+          </div>
+     			<div class="col-xs-3 text-center">
+            <button class="btn btn-default seat">
+            Reserve
+            </button>  
+          </div>
+     		</div>
+      	<div class="row">
+     			<div class="col-xs-3 text-center">
+            <button class="btn btn-default seat">
+            Reserve
+            </button>  
+          </div>
+     			<div class="col-xs-3 text-center">
+            <button class="btn btn-default seat">
+            Reserve
+            </button>  
+          </div>
+     			<div class="col-xs-3 text-center">
+            <button class="btn btn-default seat">
+            Reserve
+            </button>  
+          </div>
+     			<div class="col-xs-3 text-center">
+            <button class="btn btn-default seat">
+            Reserve
+            </button>  
+          </div>
+     		</div> 	
+     		<div class="row">
+          <div class="col-xs-3 text-center">
+            <button class="btn btn-default seat">
+            Reserve
+            </button>  
+          </div>
+          <div class="col-xs-3 text-center">
+            <button class="btn btn-default seat">
+            Reserve
+            </button>  
+          </div>
+          <div class="col-xs-3 text-center">
+            <button class="btn btn-default seat">
+            Reserve
+            </button>  
+          </div>
+          <div class="col-xs-3 text-center">
+            <button class="btn btn-default seat">
+            Reserve
+            </button>  
+          </div>
+        </div>  
+        <div class="row">
+          <div class="col-xs-3 text-center">
+            <button class="btn btn-default seat">
+            Reserve
+            </button>  
+          </div>
+          <div class="col-xs-3 text-center">
+            <button class="btn btn-default seat">
+            Reserve
+            </button>  
+          </div>
+          <div class="col-xs-3 text-center">
+            <button class="btn btn-default seat">
+            Reserve
+            </button>  
+          </div>
+          <div class="col-xs-3 text-center">
+            <button class="btn btn-default seat">
+            Reserve
+            </button>  
+          </div>
+        </div>  
+        <div class="row">
+     			<div class="col-xs-3 text-center">
+            <button class="btn btn-default seat">
+            Reserve
+            </button>  
+          </div>
+     			<div class="col-xs-3 text-center">
+            <button class="btn btn-default seat">
+            Reserve
+            </button>  
+          </div>
+     			<div class="col-xs-3 text-center">
+            <button class="btn btn-default seat">
+            Reserve
+            </button>  
+          </div>
+     			<div class="col-xs-3 text-center">
+            <button class="btn btn-default seat">
+            Reserve
+            </button>  
+          </div>
+     		</div>
+      </div> <!-- end .seats -->
+
+      <hr>
+
+    	<form id="reservationForm">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" class="form-control" id="name" placeholder="Your Name">
+        </div>
+    	  <div class="form-group">
+    	    <label for="email">Email address</label>
+    	    <input type="email" class="form-control" id="email" placeholder="Email">
+    	  </div>
+    	  <input type="submit" id="submit" class="btn btn-default"></button>
+    	</form>
 
     <script src="script.js"></script>
 </div>

@@ -1,24 +1,25 @@
-var customers = [];
+// Setting up seats
+var seats = [];
+var numOfSeats = 24;
+for (i = 1; i <= numOfSeats; i++) {
+	seats.push({ seat: i, 
+				 reserved: false } );
+};
 
-var reservationForm = document.getElementById('reservationForm');
-var seat = document.getElementsByClassName('seat');
+// Variables
+var seatBtn = document.getElementsByClassName('seat');
+var form    = document.getElementById('reservationForm');
 
-var seatList = [].slice.call(seat); // turn seats into an array
-
-function toggleAvail(seats) {
-	seats.forEach(function(seat) {
-		seat.addEventListener('click', function() {
-			seat.innerHTML = seat.innerHTML.replace('Reserve', 'Sold Out');
-		});
-	});
+// Toggle form
+function toggleForm() {
+    if (form.style.display === 'block') {
+    	form.style.display = 'none';
+    } else {
+    	form.style.display = 'block';
+    }
 }
 
-toggleAvail(seatList);
-
-function toggleForm(id) {
-   var e = document.getElementById(id);
-   if(e.style.display == 'block')
-      e.style.display = 'none';
-   else
-      e.style.display = 'block';
+for (var i = 0; i < seatBtn.length; i++) {
+    seatBtn[i].addEventListener('click', toggleForm);
 }
+

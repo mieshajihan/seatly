@@ -1,12 +1,17 @@
-#reservationForm{
+#reservationForm {
 	display:none;
+	margin-bottom: 20px;
 }
 
-.seat {
-	margin: 10px 0;
-	padding: 40px 60px;
+.description {
+	padding: 50px;
 }
 
-.seatTaken {
-	background: #333;
+.btn-inactive {
+  pointer-events: none;
+  opacity: 0.25;
+}
+
+.row {
+	margin-bottom: 1em
 }
