@@ -71,6 +71,11 @@ hr {
   opacity: .25;
 }
 
+.reserved {
+  pointer-events: none;
+  opacity: .65;
+}
+
 .copyright {
 	margin-top: 20px;
 	font-size: .9em;

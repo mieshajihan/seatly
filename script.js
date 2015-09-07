@@ -19,10 +19,10 @@ submit.addEventListener('click', submitForm);
 
 // Functions
 
-// attempting to add seat # HTML..
 // function getSeatNumber(el) {
 // 	el.forEach(function(seat) {
 // 		console.log(seat.seat);
+//      ADD seat.seat to DATA-SEAT HTML somehow...
 // 	});
 // }
 // getSeatNumber(seats);
@@ -42,7 +42,7 @@ function submitForm(e) {
 	e.preventDefault();
 
 	$('.seat').removeClass('btn-inactive'); 
-	$('.active').addClass('btn-danger btn-inactive').html('Reserved');
+	$('.active').addClass('btn-danger reserved').html('Reserved');
 	form.style.display = 'none';
 
 	form.reset();
