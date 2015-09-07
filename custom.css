@@ -68,7 +68,7 @@ hr {
 
 .btn-inactive {
   pointer-events: none;
-  opacity: 0.25;
+  opacity: .25;
 }
 
 .copyright {
