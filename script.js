@@ -1,49 +1,56 @@
 // Setting up seats
-var seats = [];
-var numOfSeats = 24;
-for (i = 1; i <= numOfSeats; i++) {
-	seats.push({ seat: i, reserved: false });
-}
+// var seats = [];
+// var numOfSeats = 24;
+// for (i = 1; i <= numOfSeats; i++) {
+// 	seats.push({ seat: i, reserved: false });
+// }
 
 // Variables
-var seatBtn = document.getElementsByClassName('seat');
-var form  = document.getElementById('reservationForm');
-var activeSeat = document.getElementById('activeSeat');
-var submit = document.getElementById('submit');
+var seatContainer = document.querySelector('#seats');
+var seatBtn = seatContainer.querySelectorAll('.seat');
+var form = document.querySelector('#reservationForm');
+var activeSeat = document.querySelector('#activeSeat');
+var submit = document.querySelector('#submit');
 
 // Event handlers
-for(i=0; i<seatBtn.length; i++){
-	seatBtn[i].addEventListener('click', showForm);
+for(i = 0; i < seatBtn.length; i++){	      
+  seatBtn[i].addEventListener('click', showForm);
+  seatBtn[i].setAttribute('data-seat', i + 1);
 }
+
 submit.addEventListener('click', submitForm);
 
 // Functions
+function showForm(event) {
+  var target = event.currentTarget;
 
-// function getSeatNumber(el) {
-// 	el.forEach(function(seat) {
-// 		console.log(seat.seat);
-//      ADD seat.seat to DATA-SEAT HTML somehow...
-// 	});
-// }
-// getSeatNumber(seats);
-
-function showForm() {
   form.style.display = 'block';
-
-  $('.seat').addClass('btn-inactive');
-  $(this).removeClass('btn-inactive').addClass('btn-primary active');
   
-  var seat = $(this).data('seat');
-  $('#currentSeat').val(seat);
-  $('#activeSeat').text(seat);
-};
+  for (i = 0; i < seatBtn.length; i++) {
+    seatBtn[i].classList.add('btn-inactive');
+  }
+  
+  target.classList.remove('btn-inactive');
+  target.classList.add('btn-primary', 'active');
+
+  activeSeat.innerHTML = target.getAttribute('data-seat');
+}
 
 function submitForm(e) {
-	e.preventDefault();
+    var allActive = document.querySelectorAll('.active');
 
-	$('.seat').removeClass('btn-inactive'); 
-	$('.active').addClass('btn-danger reserved').html('Reserved');
+	e.preventDefault();
+    for (i = 0; i < seatBtn.length; i++) {
+      seatBtn[i].classList.remove('btn-inactive');
+    }
+
+    for (i = 0; i < allActive.length; i++) {
+      allActive[i].classList.add('btn-danger', 'reserved');
+      allActive[i].innerHTML = 'Reserved';
+    }
+
 	form.style.display = 'none';
 
 	form.reset();
-};
+}
+
