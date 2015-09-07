@@ -14,11 +14,11 @@ var submit = document.querySelector('#submit');
 
 // Event handlers
 for(i = 0; i < seatBtn.length; i++){	      
-  seatBtn[i].addEventListener('click', showForm);
-  seatBtn[i].setAttribute('data-seat', i + 1);
+  seatBtn[i].addEventListener('click', showForm); 
+  seatBtn[i].setAttribute('data-seat', i + 1); 
 }
 
-submit.addEventListener('click', submitForm);
+submit.addEventListener('click', submitForm); 
 
 // Functions
 function showForm(event) {
@@ -32,7 +32,7 @@ function showForm(event) {
   
   target.classList.remove('btn-inactive');
   target.classList.add('btn-primary', 'active');
-
+  // add seat # to form from 'data-seat'
   activeSeat.innerHTML = target.getAttribute('data-seat');
 }
 
@@ -53,4 +53,3 @@ function submitForm(e) {
 
 	form.reset();
 }
-
