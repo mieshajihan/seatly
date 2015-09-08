@@ -14,15 +14,15 @@ var submit = document.querySelector('#submit');
 
 // Event handlers
 for(i = 0; i < seatBtn.length; i++){	      
-  seatBtn[i].addEventListener('click', showForm); 
-  seatBtn[i].setAttribute('data-seat', i + 1); 
+  seatBtn[i].addEventListener('click', showForm);
+  seatBtn[i].setAttribute('data-seat', i + 1);
 }
 
 submit.addEventListener('click', submitForm); 
 
 // Functions
-function showForm(event) {
-  var target = event.currentTarget;
+function showForm(e) {
+  var target = e.currentTarget;
 
   form.style.display = 'block';
   
@@ -32,15 +32,13 @@ function showForm(event) {
   
   target.classList.remove('btn-inactive');
   target.classList.add('btn-primary', 'active');
-  // add seat # to form from 'data-seat'
+  // add seat # to form from 'data-seat' attribute
   activeSeat.innerHTML = target.getAttribute('data-seat');
 }
 
-function submitForm(e) {
+function submitForm() {
     var activeBtn = document.querySelectorAll('.active');
 
-	e.preventDefault();
-	
     for (i = 0; i < seatBtn.length; i++) {
       seatBtn[i].classList.remove('btn-inactive');
     }
