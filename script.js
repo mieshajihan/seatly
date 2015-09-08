@@ -37,16 +37,17 @@ function showForm(event) {
 }
 
 function submitForm(e) {
-    var allActive = document.querySelectorAll('.active');
+    var activeBtn = document.querySelectorAll('.active');
 
 	e.preventDefault();
+	
     for (i = 0; i < seatBtn.length; i++) {
       seatBtn[i].classList.remove('btn-inactive');
     }
 
-    for (i = 0; i < allActive.length; i++) {
-      allActive[i].classList.add('btn-danger', 'reserved');
-      allActive[i].innerHTML = 'Reserved';
+    for (i = 0; i < activeBtn.length; i++) {
+      activeBtn[i].classList.add('btn-danger', 'reserved');
+      activeBtn[i].innerHTML = 'Reserved';
     }
 
 	form.style.display = 'none';
